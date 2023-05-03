@@ -3,4 +3,8 @@
     <div class="menu">
         <h2>Welcome to the menu page</h2>
     </div>
+    {% for pizza in pizzas %}
+        <h4>{{ pizza.name }}</h4>
+        <p>{{ pizza.price }}</p>
+    {% endfor %}
 {% endblock %}
