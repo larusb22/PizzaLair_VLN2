@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Welcome to the offers page</h2>
+    <div class="offers">
+        <h2>Welcome to the offers page</h2>
+    </div>
+    {% for offer in offers %}
+        <h4>{{ offer.name }}</h4>
+        <p1>{{ offer.description }}</p1>
+        <p2>{{ offer.price }}</p2>
+    {% endfor %}
 {% endblock %}
