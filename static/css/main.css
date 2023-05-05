@@ -20,6 +20,7 @@ img#website_logo {
 
 }
 
+
 .container-fluid{
   border-bottom: 2px solid #007F5B;
     height: 70px;
@@ -34,6 +35,7 @@ ul#account-cart{
     float: right;
     margin-left: 1150px;
 }
+
 
 a#account-item{
     padding-right: 20px;
@@ -57,3 +59,9 @@ button#offer-button{
     border-color: #007F5B;
     padding: 1px 20px 1px 20px;
 }
+.bg-body-tertiary {
+    --bs-bg-opacity: 0;
+
+}
+
+
