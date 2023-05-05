@@ -6,7 +6,7 @@
 }
 
 img#website_logo {
-    width: 80px;
+    width: 90px;
     height: 90px;
     margin: 0px 0px 0px 0px;
 }
@@ -20,5 +20,4 @@ img#website_logo {
 
 .bg-body-tertiary {
     --bs-bg-opacity: 0;
-  
 }
