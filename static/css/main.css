@@ -11,6 +11,7 @@ img#website_logo {
     margin: 0px 0px 0px 0px;
 }
 
+
 .container-fluid{
   border-bottom: 2px solid #007F5B;
 }
@@ -20,4 +21,6 @@ img#website_logo {
 
 .bg-body-tertiary {
     --bs-bg-opacity: 0;
+
 }
+
