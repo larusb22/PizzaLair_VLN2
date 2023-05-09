@@ -24,5 +24,5 @@ class UserAddress(models.Model):
 
 class RegisterUser(models.Model):
     user = models.ForeignKey(AccountUser, on_delete=models.CASCADE)
-    profile_image = models.ImageField(max_length=9999)
+    profile_image = models.CharField(max_length=9999)
     address = models.ForeignKey(UserAddress, on_delete=models.CASCADE)

@@ -1,16 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from menu.models import MenuProduct
-
-pizzas = [
-    {'name': 'Margherita', 'price': 9.99},
-    {'name': 'Pepperoni', 'price': 11.99},
-    {'name': 'Hawaiian', 'price': 12.99},
-    {'name': 'Meat Lovers', 'price': 13.99},
-    {'name': 'Vegetarian', 'price': 10.99},
-]
 
 
 # Create your views here.
 def index(request):
     context = {'products': MenuProduct.objects.all().order_by('name')}
     return render(request, 'menu/index.html', context)
+
+
+def get_product_by_id(request, id):
+    return render(request, 'menu/product_detail.html', {
+        'product': get_object_or_404(MenuProduct, pk=id)
+    })
+

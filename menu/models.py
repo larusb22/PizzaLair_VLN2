@@ -20,10 +20,6 @@ class MenuTopping(models.Model):
     type = models.ForeignKey(MenuToppingType, on_delete=models.CASCADE)  # Kannski hafa foreign key í Type klasann
 
 
-class MenuSize(models.Model):
-    name = models.CharField(max_length=255)  # fyrir small, medium og large
-
-
 class MenuProduct(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255, blank=True)
@@ -39,10 +35,11 @@ class MenuProductTopping(models.Model):
     topping = models.ForeignKey(MenuTopping, on_delete=models.CASCADE)
 
 
-class MenuProductPrice(models.Model):  # spurja kennara út í
-    price = models.FloatField()
+class MenuProductPrice(models.Model):
     menu = models.ForeignKey(MenuProduct, on_delete=models.CASCADE)
-    size = models.ForeignKey(MenuSize, on_delete=models.CASCADE)
+    price_small = models.DecimalField(max_digits=6, decimal_places=2, default=1000)
+    price_medium = models.DecimalField(max_digits=6, decimal_places=2, default=2000)
+    price_large = models.DecimalField(max_digits=6, decimal_places=2, default=3000)
 
 
 class MenuImage(models.Model):
