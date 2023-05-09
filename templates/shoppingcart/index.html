@@ -1,6 +1,43 @@
 {% extends 'base.html' %}
+
 {% block content %}
-
-    <h2>Welcome to the shopping cart</h2>
-
+  <h1>Shopping Cart</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cart_product in cart_products %}
+        <tr>
+          <td>{{ cart_product.product.name }}</td>
+          <td>
+            <form action="{% url 'update_cart' cart_product.product.id %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" name="action" value="-">-</button>
+              <input type="number" name="quantity" value="{{ cart_product.quantity }}" min="1" max="99">
+              <button type="submit" name="action" value="+">+</button>
+            </form>
+          </td>
+          <td>{{ cart_product.product.price }}</td>
+          <td>{{ cart_product.quantity * cart_product.product.price }}</td>
+          <td><a href="{% url 'remove_from_cart' cart_product.product.id %}">Remove</a></td>
+        </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="3">Total:</td>
+        <td>{{ total }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <form action="{% url 'clear_cart' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Clear Cart</button>
+  </form>
 {% endblock %}

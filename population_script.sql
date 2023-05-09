@@ -1,7 +1,3 @@
-INSERT INTO menu_menusize (name) VALUES ('Small');
-INSERT INTO menu_menusize (name) VALUES ('Medium');
-INSERT INTO menu_menusize (name) VALUES ('Large');
-
 INSERT INTO menu_menutype (name) VALUES ('Spicy');
 INSERT INTO menu_menutype (name) VALUES ('Vegan');
 INSERT INTO menu_menutype (name) VALUES ('Vegeterian');
@@ -47,10 +43,11 @@ INSERT INTO menu_menuproduct (name, description, rating_id, type_id)  VALUES ('V
 
 
 INSERT INTO menu_menurating (rating, total_ratings) VALUES (5, 1);
+INSERT INTO menu_menurating (rating, total_ratings) VALUES (4, 1);
 
 INSERT INTO menu_menuimage (image, menu_id) VALUES ('https://api.salescloud.is/sites/default/files/styles/large/public/products/dsc05660-3.jpg?itok=JUNeaQf1', 1);
 INSERT INTO menu_menuimage (image, menu_id) VALUES ('https://api.salescloud.is/sites/default/files/styles/large/public/products/dsc05670-3.jpg?itok=VnsjeCuy', 2);
-
+INSERT INTO menu_menuimage (image, menu_id) VALUES ('', 3);
 
 
 INSERT INTO menu_menuproducttopping (menu_id, topping_id) VALUES (1, 23);
@@ -61,7 +58,4 @@ INSERT INTO menu_menuproducttopping (menu_id, topping_id) VALUES (1, 36);
 INSERT INTO menu_menuproducttopping (menu_id, topping_id) VALUES (1, 39);
 INSERT INTO menu_menuproducttopping (menu_id, topping_id) VALUES (1, 42);
 
-
-INSERT INTO menu_menuproductprice (price, menu_id, size_id) VALUES (1990, 1, 1);
-INSERT INTO menu_menuproductprice (price, menu_id, size_id) VALUES (2590, 1, 2);
-INSERT INTO menu_menuproductprice (price, menu_id, size_id) VALUES (3490, 1, 3);
+INSERT INTO menu_menuproductprice (menu_id, price_large, price_medium, price_small) VALUES (1, 3000, 2000, 1000);
