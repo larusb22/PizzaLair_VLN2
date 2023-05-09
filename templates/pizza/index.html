@@ -1,0 +1,17 @@
+{% extends '../base.html' %}
+{% block content %}
+    <div class="candy">
+    <h2>Welcome to the pizza app</h2>
+    </div>
+    {% for pizza in pizzas %}
+        {% if pizza.price > 11 %}
+            <p>Expensive</p>
+        {% else %}
+            <p>Cheap</p>
+        {% endif %}
+
+        <h4>{{ pizza.name }}</h4>
+        <p>{{ pizza.price }}$</p>
+    {% endfor %}
+
+{% endblock %}

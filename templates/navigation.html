@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid" style="background-color: #F8F3E2">
+      <div class="container-fluid" style="background-color: #fcfef1">
         <a class="navbar-brand" href="{% url 'homepage-index' %}"><img src="../static/images/pizza_lair_logo_test.png" alt="pizza logo" id="website_logo" > </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -12,8 +12,6 @@
             <li class="nav-item">
               <a class="nav-link" id="offers-item" href="{% url 'offers-index' %}">Offers</a>
             </li>
-          </ul>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="account-cart">
               <li class="nav-item">
               <a class="nav-link" id="account-item" href="{% url 'account-index' %}">
                   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -28,7 +26,8 @@
                   </svg>
                   </a>
             </li>
-            </ul>
+          </ul>
+
         </div>
       </div>
     </nav>
