@@ -15,8 +15,18 @@
 
 img#website_logo {
     width: 90px;
-    height: 90px;
-    margin: 0px 0px 0px 0px;
+    height: auto;
+    margin: 40px 0px 0px;
+
+}
+
+#carouselExampleCaptions {
+  margin-top: 50px;
+}
+
+
+.form-floating{
+    margin-top: 50px;
 
 }
 
