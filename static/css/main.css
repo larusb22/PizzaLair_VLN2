@@ -4,6 +4,8 @@
 
     background-color: green;
 }
+
+/* Pizza lair logo on the navbar */
 .navbar-brand {
     float: none;
     position: absolute;
@@ -12,10 +14,11 @@
     transform: translate(-50%, -50%);
 
 }
-
+/* Logo of the website */
 img#website_logo {
     width: 90px;
     height: auto;
+
     margin: 40px 0px 0px;
 
 }
@@ -28,39 +31,39 @@ img#website_logo {
 .form-floating{
     margin-top: 50px;
 
+
 }
 
-
+/* Border bottom on navbar */
 .container-fluid{
   border-bottom: 2px solid #007F5B;
     height: 70px;
 }
 
+/* Navbar */
 .bg-body-tertiary {
     --bs-bg-opacity: 0;
-
-}
-
-ul#account-cart{
-    float: right;
-    margin-left: 1150px;
 }
 
 
-a#account-item{
-    padding-right: 20px;
-}
 
+/* Navbar items */
 a#menu-item{
     padding-right: 20px;
     font-size: x-large;
 }
 
 a#offers-item{
-    padding-right: 20px;
+    padding-right: 1200px;
     font-size: x-large;
 }
 
+a#account-item{
+    padding-right: 20px;
+}
+
+
+/* offer button on homepage */
 button#offer-button{
     border-radius: 6px;
     background-color: #007F5B;
@@ -69,9 +72,11 @@ button#offer-button{
     border-color: #007F5B;
     padding: 1px 20px 1px 20px;
 }
-.bg-body-tertiary {
-    --bs-bg-opacity: 0;
 
+ul{
+    list-style-type: none;
 }
+
+
 
 

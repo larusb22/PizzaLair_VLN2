@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
     <div class="menu">
         <h2>Welcome to the menu page</h2>
+    </div>
+    <div class="search-wrapper">
+        <input type="search" id="mysearch" placeholder="Search for your pizza!">
+    <ul id="search-result"></ul>
     </div>
     <div class="products">
     {% for product in products %}
         {% include 'menu/single_menu.html' with product=product %}
     {% endfor %}
         </div>
+
+
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+<script src="{% static 'js/menu.js' %}"></script>
+
 {% endblock %}
