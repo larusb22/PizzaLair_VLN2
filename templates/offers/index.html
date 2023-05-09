@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="offers">
-        <h2>Welcome to the offers page</h2>
-    </div>
+{% load static %}
+
+<div class="offers">
+  <h2>Welcome to the offers page</h2>
+
+  <div class="offer-grid">
     {% for offer in offers %}
-        <h4>{{ offer.name }}</h4>
+    <div class="offer-item" style="background-image: url('https://api.salescloud.is/sites/default/files/styles/large/public/products/dsc05660-3.jpg?itok=JUNeaQf1')">
+      <div class="offer-content">
+        <h3>{{ offer.name }}</h3>
         <p1>{{ offer.description }}</p1>
         <p2>{{ offer.price }}</p2>
+        <button class="order-now" onclick="selectOffer('{{ offer.id }}')">Order Now</button>
+      </div>
+    </div>
     {% endfor %}
+  </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/offers.css' %}" />
+
 {% endblock %}
