@@ -1,11 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="offers">
-        <h2>Welcome to the offers page</h2>
-    </div>
-    {% for offer in offers %}
-        <h4>{{ offer.name }}</h4>
-        <p1>{{ offer.description }}</p1>
-        <p2>{{ offer.price }}</p2>
-    {% endfor %}
+{% load static %}
+
+<div class="offers">
+  <h2>Welcome to the offers page</h2>
+
+  <table>
+    <tr>
+      {% for offer in offers %}
+        <td onclick="selectOffer('{{ offer.id }}')">
+          <div class="offer-item" style="background-image: url('{{ offer.image.url }}')">
+            <h4>{{ offer.name }}</h4>
+            <p>{{ offer.description }}</p>
+            <p>{{ offer.price }}</p>
+          </div>
+        </td>
+      {% endfor %}
+    </tr>
+  </table>
+
+</div>
+
+<link rel="stylesheet" href="{% static 'css/offers.css' %}" />
+
 {% endblock %}
