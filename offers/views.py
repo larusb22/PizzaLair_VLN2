@@ -4,6 +4,8 @@ from django.shortcuts import render
 offers = [
     {'name': '2 For 1 ', 'description': 'Buy 1 and get 2', 'price': 14.99},
     {'name': 'Meat Fiesta', 'description': 'A lot of meat', 'price': 15.99},
+    {'name': 'Pizza Madnesss', 'description': 'Hawaiian pizza, Spicy Southwest and Nutella pizza', 'price': 19.99},
+    {'name': 'Pizza Madnesss', 'description': 'Hawaiian pizza, Spicy Southwest and Nutella pizza', 'price': 19.99},
 
 ]
 
