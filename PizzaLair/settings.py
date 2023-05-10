@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'offers.apps.OffersConfig',
     'shoppingcart.apps.ShoppingcartConfig',
     'account.apps.AccountConfig',
+    'order.apps.OrderConfig',
 
 ]
 
