@@ -5,6 +5,8 @@
     <img class="img-id" src="{{ product.menuimage_set.first.image }}" />
 
     <p>{{ product.description }}</p>
+
+    <p>Toppings: {{ topping }}</p>
     <p>Small: {{ product.menuproductprice_set.first.price_small }}</p>
     <p>Medium: {{ product.menuproductprice_set.first.price_medium }}</p>
     <p>Large: {{ product.menuproductprice_set.first.price_large }}</p>
