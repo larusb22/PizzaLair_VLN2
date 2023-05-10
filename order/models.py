@@ -13,7 +13,7 @@ class Order(models.Model):
     order_status = models.CharField(max_length=255)
     date = models.DateTimeField()
     paid = models.BooleanField()
-    total_price = models.DecimalField(max_digits=8)
+    total_price = models.DecimalField(max_digits=8, decimal_places=0)
     user = models.ForeignKey(AccountUser, on_delete=models.CASCADE)
     country = models.ForeignKey(Countries, on_delete=models.CASCADE)
 
