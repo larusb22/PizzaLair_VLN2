@@ -1,21 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load static %}
-    <div class="menu">
-        <h2>Welcome to the menu page</h2>
-    </div>
+  {% load static %}
+  <div class="menu"></div>
+
+  <div class="search-container">
     <div class="search-wrapper">
-        <input type="search" id="mysearch" placeholder="Search for your pizza!">
-    <ul id="search-result"></ul>
+      <input type="search" id="mysearch" placeholder="Search for your pizza!">
     </div>
-    <div class="products">
+    <div class="filters">
+        <button class="filters clear-filter">Clear All Filters</button>
+      {% for type in types %}
+        <a href="#" class="filter-btn" data-filter="{{ type.name }}">{{ type.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="products">
     {% for product in products %}
-        {% include 'menu/single_menu.html' with product=product %}
+      <div class="well-product" data-filter="{{ product.filter }}">
+        <a href="/menu/{{ product.id }}">
+          <img class="img-id" src="{{ product.menuimage_set.first.image }}" />
+          <div class="product-info">
+            <h4 data-search="{{ product.name|lower }}">{{ product.name }}</h4>
+            <p>{{ product.description }}</p>
+
+          </div>
+        </a>
+      </div>
     {% endfor %}
-        </div>
+  </div>
 
-
-    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
-<script src="{% static 'js/menu.js' %}"></script>
-
+  <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+  <script src="{% static 'js/menu.js' %}"></script>
 {% endblock %}
