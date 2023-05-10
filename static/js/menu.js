@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('mysearch');
   const products = document.querySelectorAll('.well-product');
@@ -62,3 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+const searchInput = document.querySelector("[data-search]");
+
+searchInput.addEventListener("input", function (e) {
+    const value = e.target.value;
+    console.log(value);
+});
+
