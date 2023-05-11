@@ -1,7 +1,20 @@
+{% block content %}
+{% load static %}
+
+
+
+
 <div class="well-product">
-    <a>
-        <img class="img-id" src="{{ product.menuimage_set.first.image }}" />
-        <h4>{{ product.name }}</h4>
-        <p>{{ product.description }}</p>
-    </a>
+  <a href="/menu/{{ product.id }}">
+    <img class="img-id" src="{{ product.menuimage_set.first.image }}" />
+    <div class="product-info">
+      <h4 data-search="{{ product.name|lower }}">{{ product.name }}</h4>
+
+      <p>{{ product.description }}</p>
+    </div>
+  </a>
 </div>
+
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+
+{% endblock %}

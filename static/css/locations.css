@@ -1,0 +1,67 @@
+.container {
+    padding: 2rem 1.875rem;
+    flex: 1;
+    margin: 0 auto;
+    overflow:hidden;
+    position: relative;
+    width: 100%;
+}
+
+.heading_container {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 80%;
+    padding:4.375rem 0;
+}
+
+.heading_title {
+    color: #007F5B;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.locations_grid {
+    grid-gap: 1.875rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    margin-bottom: 12.5rem;
+}
+
+.locations_location {
+    background: #fff;
+    border-radius: 0 0 0.1875rem 0.1875rem;
+    border-top: 0.25rem solid #007F5B;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1.25rem;
+    width: 100%;
+}
+
+.location_street {
+    font-size: 1.5rem;
+    padding:0;
+    margin:0;
+}
+
+.location_city {
+    font-size: 1.25rem;
+}
+
+.opening_hours {
+    display:flex;
+    flex-flow: column nowrap;
+}
+
+
+
+p, ul {
+    line-height: 1.25;
+}
+
+.locations_grid > li {
+    display: flex;
+}

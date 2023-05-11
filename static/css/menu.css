@@ -1,0 +1,112 @@
+.search-wrapper {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+input[type="search"] {
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+input[type="submit"] {
+  font-size: 1rem;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Adjust border radius as needed */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem; /* Adjust margin as needed */
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.filters .clear-filter {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
+}
+
+.filters .clear-filter:hover {
+  background-color: gray;
+  color: white;
+}
+
+
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filters .filter-btn {
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
+}
+
+.filters .filter-btn:hover {
+  background-color: gray; /* Adjust hover background color */
+  color: white; /* Adjust hover text color */
+}
+
+
+.hide {
+  display: none;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.well-product {
+  display: flex;
+  position: relative;
+  width: calc(25% - 20px);
+  margin-bottom: 20px;
+  border-radius: 25px;
+  border: 2px solid darkgreen;
+  background-color: beige;
+}
+
+.well-product a {
+  display: flex;
+  flex-direction: column; /* Stack the image and text vertically */
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+}
+
+.well-product img {
+  width: 100%;
+  height: auto;
+  border-radius: 25px 25px 0 0; /* Rounded corners on the top */
+}
+
+.well-product .product-info {
+  flex-grow: 1; /* Expand the text container to fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.well-product h4,
+.well-product p {
+  margin: 0;
+  text-align: center; /* Adjust text alignment as needed */
+}

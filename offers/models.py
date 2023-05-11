@@ -18,6 +18,5 @@ class Offers(models.Model):
     description = models.CharField(max_length=400)  # Getur verið lengra
     rating = models.ForeignKey(OfferRating, on_delete=models.CASCADE)
     product = models.ForeignKey(MenuProduct, on_delete=models.CASCADE)
-    price = models.FloatField()
 
 

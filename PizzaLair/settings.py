@@ -43,7 +43,13 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'menu.apps.MenuConfig',
     'offers.apps.OffersConfig',
+
+    
+
+    'shoppingcart.apps.ShoppingcartConfig',
     'account.apps.AccountConfig',
+    'order.apps.OrderConfig',
+
 
 ]
 
