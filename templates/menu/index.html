@@ -5,16 +5,20 @@
 
   <div class="search-container">
     <div class="search-wrapper">
-       <input type="search" id="mysearch" placeholder="Search for your pizza!" data-search>
+
+        <input type="search" id="mysearch" placeholder="Search for your pizza!" data-search>
+
     <ul id="search-result"></ul>
 
     </div>
     <div class="filters">
       <button class="filters clear-filter">Clear All Filters</button>
       {% for type in types %}
+
         <a href="{% url 'menu-types' type.id %}" class="filter-btn {% if selected_type == type %}active{% endif %}">
           {{ type.name }}
         </a>
+
       {% endfor %}
     </div>
   </div>

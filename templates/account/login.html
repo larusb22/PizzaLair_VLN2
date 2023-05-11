@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load static %}
+    <h2>Login here</h2>
+    <form class="form form-horizontal" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="btn btn-primary" value="Login">
+    </form>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
