@@ -200,6 +200,7 @@ header .shopping span{
     grid-template-columns: repeat(2, 1fr);
 }
 
+
 body {
     background-color: #E3E7E8;
     font-family: system-ui;
@@ -344,7 +345,13 @@ header .shopping span{
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {
+    background-color: #007F5B;
+    border-radius: 10px;
+    color: black;
+    border: solid 3px #004c36;
+
+}
 
 
 body {

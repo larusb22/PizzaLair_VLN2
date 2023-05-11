@@ -10,7 +10,8 @@
 form.form-horizontal {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1px;
+
 }
 
 .btn {
