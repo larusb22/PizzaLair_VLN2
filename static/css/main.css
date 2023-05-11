@@ -201,7 +201,6 @@ header .shopping span{
 }
 
 
-
 body {
     background-color: #E3E7E8;
     font-family: system-ui;
@@ -318,6 +317,7 @@ header .shopping span{
 .dropdown {
   position: relative;
   display: inline-block;
+    padding-right: 20px;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -354,3 +354,16 @@ header .shopping span{
 }
 
 
+body {
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.footer-container{
+    position: sticky;
+    bottom: 0;
+
+}

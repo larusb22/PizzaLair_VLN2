@@ -6,8 +6,6 @@
   <div class="search-container">
     <div class="search-wrapper">
 
-      <input type="search" id="mysearch" placeholder="Search for your pizza!">
-
         <input type="search" id="mysearch" placeholder="Search for your pizza!" data-search>
     <ul id="search-result"></ul>
 
@@ -15,7 +13,7 @@
     <div class="filters">
         <button class="filters clear-filter">Clear All Filters</button>
       {% for type in types %}
-        <a href="#" class="filter-btn" data-filter="{{ type.name }}">{{ type.name }}</a>
+        <a href="" class="filter-btn" data-filter="{{ type.name }}">{{ type.name }}</a>
       {% endfor %}
     </div>
   </div>
