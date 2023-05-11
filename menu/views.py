@@ -20,7 +20,7 @@ def get_toppings(request, menu_id):
     })
 
 
-def types(request):
+def types(request, type_id):
     return render(request, 'menu/index.html', {
-        'types': MenuType.objects.all()
+        'types': MenuType.objects.filter(id=type_id).first()
     })
