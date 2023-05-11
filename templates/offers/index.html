@@ -11,8 +11,7 @@
       <div class="offer-content">
         <h3>{{ offer.name }}</h3>
         <p1>{{ offer.description }}</p1>
-        <p2>{{ offer.price }}</p2>
-        <button class="order-now" onclick="selectOffer('{{ offer.id }}')">Order Now</button>
+        <button class="order-now" onclick="selectOffer('{{ offer.id }}')">{{ offer.price }} kr.</button>
       </div>
     </div>
     {% endfor %}
