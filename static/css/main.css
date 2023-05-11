@@ -64,7 +64,7 @@ a#menu-item{
 }
 
 a#offers-item{
-    padding-right: 1200px;
+    padding-right: 20px;
     font-size: x-large;
 }
 
@@ -201,7 +201,6 @@ header .shopping span{
 }
 
 
-}
 
 body {
     background-color: #E3E7E8;
@@ -308,7 +307,7 @@ header .shopping span{
 .dropbtn {
   background-color: transparent;
   margin-top: 4px;
-  color: #000000A6;
+  color: white;
   padding: 2px;
   font-size: 24px;
   border: none;
@@ -319,6 +318,7 @@ header .shopping span{
 .dropdown {
   position: relative;
   display: inline-block;
+    padding-right: 20px;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -349,3 +349,16 @@ header .shopping span{
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 
+body {
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.footer-container{
+    position: sticky;
+    bottom: 0;
+
+}
