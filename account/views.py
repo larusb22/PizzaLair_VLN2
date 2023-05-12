@@ -1,9 +1,8 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 
-from account.forms.profile_form import ProfileForm
+from account.forms import ProfileForm
 from account.models import Profile
-
 
 
 def register(request):
@@ -15,6 +14,7 @@ def register(request):
     return render(request, 'account/register.html', {
         'form': UserCreationForm()
     })
+
 
 def profile(request):
     profile = Profile.objects.filter(user=request.user).first()
@@ -28,4 +28,3 @@ def profile(request):
     return render(request, 'account/profile.html', {
         'form': ProfileForm(instance=profile)
     })
-

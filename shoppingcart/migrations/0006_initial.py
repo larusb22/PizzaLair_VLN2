@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('menu', '0011_menuproduct_price_menuproduct_quantity_and_more'),
+        ('menu', '0011_menu-product_price_menu-product_quantity_and_more'),
         ('offers', '0004_remove_offers_rating_offers_offer_image_offers_price_and_more'),
         ('shoppingcart', '0005_delete_order'),
     ]
