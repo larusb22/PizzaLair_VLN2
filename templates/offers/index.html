@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 
+
 <div class="offers">
 
 
@@ -13,8 +14,9 @@
       <div class="offer-content">
         <h3>{{ offer.name }}</h3>
         <p1>{{ offer.description }}</p1>
-        <button class="order-now" onclick="selectOffer('{{ offer.id }}')">{{ offer.price }} kr.</button>
+        <button class="order-now" onclick="window.location.href='{{ offer.location }}'">{{ offer.price }} kr.</button>
       </div>
+    <button class="order-now" onclick="window.location.href{{ offer.location }}">{{ offer.price }} kr.</button>
     </div>
     {% endfor %}
   </div>
