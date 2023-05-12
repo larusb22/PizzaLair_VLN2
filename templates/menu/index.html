@@ -17,6 +17,18 @@
       {% endfor %}
     </div>
 
+    <form id="order-form" action="{% url 'menu-index' %}" method="GET">
+  <label for="order-select">Order by:</label>
+  <select id="order-select" name="order">
+    <option value="name">Name: A-Z</option>
+     <option value="-name">Name: Z-A</option>
+     <option value="price">Lowest Price</option>
+    <option value="-price">Highest Price</option>
+    <!-- Add more options as needed for different ordering criteria -->
+  </select>
+  <button type="submit">Apply</button>
+    </form>
+
   </div>
 
 
@@ -42,5 +54,6 @@
 
   <link rel="stylesheet" href="{% static 'css/menu.css' %}">
   <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static '/js/orderBy.js' %}" type="text/javascript"></script>
 
 {% endblock %}

@@ -2,12 +2,34 @@ from django.shortcuts import render, get_object_or_404
 from menu.models import MenuProduct, MenuProductTopping, MenuTopping, MenuType
 
 
-def index(request):
+'''def index(request):
     context = {
-        'products': MenuProduct.objects.all().order_by('name'),
+        'products': MenuProduct.objects.all().order_by('-name'),
         'types': MenuType.objects.all(),
     }
+
+    return render(request, 'menu/index.html', context)'''
+
+def index(request):
+    order = request.GET.get('order', 'name')  # Default to ordering by name
+
+    # Order the products based on the selected order
+    products = MenuProduct.objects.all().order_by(order)
+
+    # Retrieve all types
+    types = MenuType.objects.all()
+
+    context = {
+        'products': products,
+        'types': types,
+    }
+
     return render(request, 'menu/index.html', context)
+
+
+
+
+
 
 
 def get_product_by_id(request, product_id):
@@ -37,4 +59,3 @@ def types(request, type_id=None):
         'selected_type': selected_type,
     }
     return render(request, 'menu/index.html', context)
-
