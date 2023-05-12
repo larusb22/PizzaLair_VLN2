@@ -24,7 +24,7 @@
   </div>
 
      <div class="products">
-      {% for product in products %}
+     {% for product in products %}
         <div class="well-product" data-filter="{{ product.type.id }}">
           <a href="/menu/{{ product.id }}">
             <img class="img-id" src="{{ product.menuimage_set.first.image }}" />

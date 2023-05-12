@@ -21,9 +21,17 @@ def get_toppings(request, menu_id):
         'topping': get_object_or_404(MenuProductTopping, pk=menu_id)
     })
 
+def types(request, type_id=None):
+    selected_type = None
+    products = MenuProduct.objects.all().order_by('name')
 
-def types(request, type_id):
-    return render(request, 'menu/index.html', {
-        'types': MenuType.objects.filter(id=type_id).first()
-    })
+    if type_id is not None:
+        selected_type = get_object_or_404(MenuType, pk=type_id)
+        products = products.filter(type=selected_type)
 
+    context = {
+        'products': products,
+        'types': MenuType.objects.all(),
+        'selected_type': selected_type,
+    }
+    return render(request, 'menu/index.html', context)

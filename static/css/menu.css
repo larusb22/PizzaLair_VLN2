@@ -75,7 +75,7 @@ input[type="submit"] {
 .well-product {
   display: flex;
   position: relative;
-  width: calc(25% - 20px);
+  width: calc(20% - 20px);
   margin-bottom: 20px;
   border-radius: 25px;
   border: 2px solid darkgreen;
