@@ -5,7 +5,6 @@ from account.forms import ProfileForm
 from account.models import Profile
 
 
-
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(data=request.POST)
@@ -15,6 +14,7 @@ def register(request):
     return render(request, 'account/register.html', {
         'form': UserCreationForm()
     })
+
 
 def profile(request):
     profile = Profile.objects.filter(user=request.user).first()
@@ -28,4 +28,3 @@ def profile(request):
     return render(request, 'account/profile.html', {
         'form': ProfileForm(instance=profile)
     })
-

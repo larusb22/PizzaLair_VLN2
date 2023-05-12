@@ -1,6 +1,6 @@
 from django.db import models
 from menu.models import MenuProduct
-from offers.models import Offers
+from account.models import AccountInformation
 
 
 # Create your models here.
@@ -8,4 +8,3 @@ from offers.models import Offers
 class OrderedProduct(models.Model):
     product = models.ForeignKey(MenuProduct, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
-    offer = models.ForeignKey(Offers, on_delete=models.CASCADE)

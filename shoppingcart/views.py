@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import MenuProduct
+from .models import MenuProduct, OrderedProduct
 from account.forms import UnregisteredUserForm, RegisteredUserForm, CreditCardForm
 from django.contrib.auth.models import User
 
@@ -122,7 +122,7 @@ def account_information(request):
             form = RegisteredUserForm()
         else:
             form = UnregisteredUserForm()
-    return render(request, 'shoppingcart/account_information.html', {'form': form})
+    return render(request, 'shoppingcart/payment_information.html', {'form': form})
 
 
 def payment_information(request):
@@ -136,4 +136,20 @@ def payment_information(request):
 
 
 def order_review(request):
-    return render(request, 'shoppingcart/order_review.html')
+    if request.method == 'POST':
+        ordered_products = []
+        cart = request.session.get('cart', {})
+        for prodid, quantity in cart.items():
+            prod = MenuProduct.objects.filter(id=prodid).first()
+            if prod:
+                ordered_product = OrderedProduct(product=prod, quantity=quantity)
+                ordered_products.append(ordered_product)
+        if ordered_products:
+            OrderedProduct.objects.bulk_create(ordered_products)
+            del request.session['cart']
+            return redirect('order_confirmation')
+    return redirect('view_cart')
+
+
+def order_confirmation(request):
+    return render(request, 'shoppingcart/order_confirmation.html')
