@@ -20,6 +20,7 @@
 
       {% endfor %}
     </div>
+
   </div>
 
      <div class="products">
@@ -31,15 +32,15 @@
               <h4 data-search="{{ product.name|lower }}">{{ product.name }}</h4>
               <p>{{ product.description }}</p>
             </div>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
-          </div>
-            <p class="price">{{ product.price }} kr.</p>
+                <p class="price">{{ product.price }} kr.</p>
         </a>
       </div>
     {% endfor %}
+          </a>
+        </div>
+    </div>
+          </div>
+
   </div>
   <link rel="stylesheet" href="{% static 'css/menu.css' %}">
   <script src="{% static 'js/menu.js' %}"></script>

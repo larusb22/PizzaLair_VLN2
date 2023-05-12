@@ -27,4 +27,3 @@ def types(request, type_id):
     return render(request, 'menu/index.html', {
         'types': MenuType.objects.filter(id=type_id).first()
     })
-

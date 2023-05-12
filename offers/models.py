@@ -8,15 +8,10 @@ from menu.models import MenuProduct
 
 # Spurning hvort það ætti að vera sér rating fyrir Offers og fyrir Product?
 
-class OfferRating(models.Model):
-    rating = models.FloatField()
-    total_ratings = models.IntegerField()
-
-
 class Offers(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=400)  # Getur verið lengra
-    rating = models.ForeignKey(OfferRating, on_delete=models.CASCADE)
+    price = models.DecimalField(decimal_places=0, max_digits=8, default=1490)
     product = models.ForeignKey(MenuProduct, on_delete=models.CASCADE)
-
+    offer_image = models.CharField(max_length=9999, default='')
 
