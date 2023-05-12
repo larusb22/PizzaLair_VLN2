@@ -8,9 +8,6 @@
 
       <input type="search" id="mysearch" placeholder="Search for your pizza!">
 
-        <input type="search" id="mysearch" placeholder="Search for your pizza!" data-search>
-    <ul id="search-result"></ul>
-
     </div>
     <div class="filters">
         <button class="filters clear-filter">Clear All Filters</button>
@@ -29,7 +26,9 @@
             <h4 data-search="{{ product.name|lower }}">{{ product.name }}</h4>
             <p>{{ product.description }}</p>
 
+
           </div>
+            <p class="price">{{ product.price }} kr.</p>
         </a>
       </div>
     {% endfor %}
