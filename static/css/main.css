@@ -397,5 +397,8 @@ footer {
     width: 130px;
     border-radius: 5%;
     margin: auto;
+}
 
+.container {
+    margin-bottom: 120px;
 }

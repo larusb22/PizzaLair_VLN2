@@ -2,9 +2,9 @@ from django.shortcuts import render
 
 # Create your views here.
 offers = [
-    {'name': 'Family Offer', 'description': 'Buy 2 pizzas and get 1 more for free', 'price': 2290, 'image': '/static/images/maximillian.png'},
-    {'name': 'La Quatro ', 'description': 'Every month 4 of the pizzas on the menu are on the price of 1.000 kr!', 'price': 1000, 'image': '/static/images/la_quatro_final.png'},
-    {'name': 'Pizza Madness', 'description': 'Hawaiian pizza, Spicy Southwest and Nutella pizza', 'price': 2790, 'image': '/static/images/pizza_madness.png'},
+    {'name': 'Pizza of the month', 'description': 'Introducing our Pizza of the Month: the "Deluxe Feast"! Indulge in a mouthwatering combination of pepperoni, Italian sausage, bacon, bell peppers, tomatoes', 'price': 1090, 'image': '/static/images/pizza_of_the_month.png','location':'http://127.0.0.1:8000/menu/14/'},
+    {'name': 'Double Trouble ', 'description': 'Pizza Lair suprise and pepperoni pizza for the price of 2290 kr!', 'price': 2290, 'image': '/static/images/Double_Trouble.png','location':'http://127.0.0.1:8000/menu/15/'},
+    {'name': 'Wombo combo', 'description': 'Get a pizza with the side of breadsticks and a soda for a whopping 1990!', 'price': 1990, 'image': '/static/images/wombo_combo.png','location':'http://127.0.0.1:8000/menu/16/'},
 ]
 
 
