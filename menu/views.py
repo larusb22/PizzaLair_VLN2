@@ -2,9 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from menu.models import MenuProduct, MenuProductTopping, MenuTopping, MenuType
 
 
-# Create your views here.
 def index(request):
-    context = {'products': MenuProduct.objects.all().order_by('name'), 'types': MenuType.objects.all()}
+    context = {
+        'products': MenuProduct.objects.all().order_by('name'),
+        'types': MenuType.objects.all()
+    }
     return render(request, 'menu/index.html', context)
 
 
@@ -21,7 +23,8 @@ def get_toppings(product_id):
     return topping_names
 
 
-def types(request):
+def types(request, type_id):
     return render(request, 'menu/index.html', {
-        'types': MenuType.objects.all()
+        'types': MenuType.objects.filter(id=type_id).first()
     })
+
