@@ -18,6 +18,11 @@
 
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0 right-nav">
+                
+              {% if request.user.is_authenticated%}
+                  <img src="{{ user.profile.profile_image }}" class="profile-image" alt="profileIMG">
+              {% endif %}
+          
                 <li class="nav-item leftNav" >
                     <div class="dropdown" >
                         <button class="dropbtn"> Account
@@ -26,8 +31,11 @@
                             </svg>
                         </button>
                         {% if request.user.is_authenticated %}
+
                             <div class="dropdown-content" style="right:0;">
+                                    <a href="{% url 'profile' %}">Profile</a>
                                     <a href="{% url 'logout' %}">Logout</a>
+
                             </div>
                         {% else %}
                             <div class="dropdown-content" style="right:0;">
@@ -36,6 +44,8 @@
                             </div>
                         {% endif %}
                 </li>
+          
+
 
 
                 <li class="nav-item leftNav">
