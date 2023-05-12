@@ -110,3 +110,8 @@ input[type="submit"] {
   margin: 0;
   text-align: center; /* Adjust text alignment as needed */
 }
+
+.price{
+  font-weight: bold;
+  color: #007F5B;
+}

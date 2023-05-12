@@ -1,17 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
+
 <div class="product-detail">
     <h1>{{ product.name }}</h1>
     <img class="img-id" src="{{ product.menuimage_set.first.image }}" />
 
-    <p>{{ product.description }}</p>
+
+    </div>
+
     <div class="price">
-        <p>Price: {{ product.price }}kr.</p>
+        <p>{{ product.description }}</p>
+        {% if toppings %}
+            <p><b>Toppings</b>: {{ toppings|join:", " }}</p>
+        {% endif %}
+        <p id="cost">Price: {{ product.price }}kr.</p>
+    <div class="add-to-cart">
+        <button type="button" onclick="window.location.href='{% url 'add_to_cart' product.id %}'" id="cart-button">Add to cart</button>
+        <!--a href="{% url 'add_to_cart' product.id %}" class="add-to-cart">Add to cart</a-->
+    </div>
+
     </div>
 
 </div>
 
-    <div class="add-to-cart">
-        <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart">Add to cart</a>
-    </div>
+
+    <link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
 {% endblock %}

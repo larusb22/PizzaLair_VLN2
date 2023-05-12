@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -30,3 +31,4 @@ class CreditCard(models.Model):
     expiry_date = models.DateField()
     cvc_number = models.CharField(max_length=3)
     payment_method = models.CharField(max_length=20, choices=(('CARD', 'Card'), ('CASH', 'Cash')))
+

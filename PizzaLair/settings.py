@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+import account.apps
 import menu.apps
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,8 +43,12 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'menu.apps.MenuConfig',
     'offers.apps.OffersConfig',
+
+    
+
     'shoppingcart.apps.ShoppingcartConfig',
     'account.apps.AccountConfig',
+
 
 ]
 
@@ -137,3 +142,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'account/login'
+LOGIN_REDIRECT_URL = '/account/profile'
