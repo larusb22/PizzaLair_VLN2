@@ -2,24 +2,30 @@ from django.shortcuts import render, get_object_or_404
 from menu.models import MenuProduct, MenuProductTopping, MenuTopping, MenuType
 
 
+
 def index(request):
+    order = request.GET.get('order', 'name')
+    products = MenuProduct.objects.all().order_by(order)
+    types = MenuType.objects.all()
     context = {
-        'products': MenuProduct.objects.all().order_by('name'),
-        'types': MenuType.objects.all(),
+        'products': products,
+        'types': types,
+        'order': order,
     }
     return render(request, 'menu/index.html', context)
 
 
-def get_product_by_id(request, id):
-    return render(request, 'menu/product_detail.html', {
-        'product': get_object_or_404(MenuProduct, pk=id),
-    })
+def get_product_by_id(request, product_id):
+    product = get_object_or_404(MenuProduct, pk=product_id)
+    toppings = get_toppings(product_id)
+    context = {'product': product, 'toppings': toppings}
+    return render(request, 'menu/product_detail.html', context)
 
 
-def get_toppings(request, menu_id):
-    return render(request, 'menu/product_detail.html', {
-        'topping': get_object_or_404(MenuProductTopping, pk=menu_id),
-    })
+def get_toppings(product_id):
+    toppings = MenuProductTopping.objects.filter(menu=product_id).select_related('topping')
+    topping_names = [t.topping.name for t in toppings]
+    return topping_names
 
 
 def types(request, type_id=None):

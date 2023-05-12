@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
   {% load static %}
 
@@ -11,30 +10,49 @@
 
     <div class="filters">
       <button class="clear-filter">Clear All Filters</button>
-
       {% for type in types %}
-        <a href="{% url 'menu-types' type.id %}" class="filter-btn{% if selected_type == type %} active{% endif %}">
+        <a href="{% url 'menu-types' type.id %}" class="filter-btn {% if selected_type == type %} active{% endif %}">
           {{ type.name }}
         </a>
       {% endfor %}
     </div>
+
+    <form id="order-form" action="{% url 'menu-index' %}" method="GET">
+  <label for="order-select">Order by:</label>
+  <select id="order-select" name="order">
+    <option value="name" {% if order == 'name' %}selected{% endif %}>Name: A-Z</option>
+     <option value="-name" {% if order == '-name' %}selected{% endif %}>Name: Z-A</option>
+     <option value="price" {% if order == 'price' %}selected{% endif %}>Lowest Price</option>
+    <option value="-price" {% if order == '-price' %}selected{% endif %}>Highest Price</option>
+    <!-- Add more options as needed for different ordering criteria -->
+  </select>
+  <button type="submit">Apply</button>
+    </form>
   </div>
 
-  <div class="products">
-    {% for product in products %}
-      <div class="well-product" data-filter="{{ product.filter }}">
-        <a href="/menu/{{ product.id }}">
-          <img class="img-id" src="{{ product.menuimage_set.first.image }}" />
-          <div class="product-info">
-            <h4 data-search="{{ product.name|lower }}">{{ product.name }}</h4>
-            <p>{{ product.description }}</p>
-          </div>
+
+     <div class="products">
+      {% for product in products %}
+        <div class="well-product" data-filter="{{ product.type.id }}">
+          <a href="/menu/{{ product.id }}">
+            <img class="img-id" src="{{ product.menuimage_set.first.image }}" />
+            <div class="product-info">
+              <h4 data-search="{{ product.name|lower }}">{{ product.name }}</h4>
+              <p>{{ product.description }}</p>
+            </div>
+                <p class="price">{{ product.price }} kr.</p>
         </a>
       </div>
     {% endfor %}
+          </a>
+        </div>
+    </div>
+          </div>
+
   </div>
 
   <link rel="stylesheet" href="{% static 'css/menu.css' %}">
   <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static '/js/orderBy.js' %}" type="text/javascript"></script>
 
 {% endblock %}

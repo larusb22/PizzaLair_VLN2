@@ -1,7 +1,7 @@
 
 .product-detail img {
-    width: 80%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
 }
 .product-detail {
     padding-top: 10px;
@@ -19,13 +19,13 @@
     font-weight: bold;
     color: #007F5B;
     position: relative;
-    top:260px;
+    top:60px;
 
 }
 
 #cart-button {
     position: relative;
-    top: 250px;
+    top: 50px;
     background-color: #007F5B;
     color: white;
     border: none;
