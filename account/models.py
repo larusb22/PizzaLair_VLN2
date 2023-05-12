@@ -1,28 +1,32 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
 
-class AccountUser(models.Model):
-    email = models.CharField(max_length=255, unique="")  # Þarf að bæta ehv við
-    password = models.CharField(max_length=255)
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-
-
-class Countries(models.Model):
-    name = models.CharField(max_length=255)
-
-
-class UserAddress(models.Model):
-    country = models.ForeignKey(Countries, on_delete=models.CASCADE)
-    city = models.CharField(max_length=255)
-    house_address = models.CharField(max_length=255)
-    house_number = models.CharField(max_length=255)
-    postal_code = models.CharField(max_length=255)
-
-
-class RegisterUser(models.Model):
-    user = models.ForeignKey(AccountUser, on_delete=models.CASCADE)
     profile_image = models.CharField(max_length=9999)
-    address = models.ForeignKey(UserAddress, on_delete=models.CASCADE)
+
+
+class AccountInformation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    first_name = models.CharField(max_length=255, blank=True, null=True)
+    last_name = models.CharField(max_length=255, blank=True, null=True)
+    country = models.CharField(max_length=255, blank=True, null=True)
+    city = models.CharField(max_length=255, blank=True, null=True)
+    house_address = models.CharField(max_length=255, blank=True, null=True)
+    house_number = models.CharField(max_length=255, blank=True, null=True)
+    postal_code = models.CharField(max_length=255, blank=True, null=True)
+
+
+class CreditCard(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    cardholder_name = models.CharField(max_length=255, null=False, default='')
+    card_number = models.CharField(max_length=16)
+    expiry_date = models.DateField()
+    cvc_number = models.CharField(max_length=3)
+    payment_method = models.CharField(max_length=20, choices=(('CARD', 'Card'), ('CASH', 'Cash')))

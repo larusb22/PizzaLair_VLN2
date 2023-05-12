@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Payment Information</h1>
+	<form method="POST" action="{% url 'order_review' %}">
+		{% csrf_token %}
+		<fieldset id="payment-information">
+			<legend>Credit Card Information</legend>
+            <br>
+            <label for="cardholder-name">Cardholder name:</label>
+            <input type="test" id="cardholder-name" name="cardholder-name" required>
+			<label for="card_number">Card Number:</label>
+			<input type="text" id="card_number" name="card_number" required>
+			<label for="expiration_date">Expiration Date:</label>
+			<input type="date" id="expiration_date" name="expiration_date" required>
+			<br>
+			<label for="security_code">Security Code:</label>
+			<input type="text" id="security_code" name="security_code" required>
+			<br>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>Payment Options</legend>
+			<input type="radio" id="pay_now" name="payment_option" value="now" checked>
+			<label for="pay_now">Pay Now</label>
+			<br>
+			<input type="radio" id="pay_later" name="payment_option" value="later">
+			<label for="pay_later">Pay Later</label>
+		</fieldset>
+		<br>
+		<input type="submit" value="Submit Payment">
+	</form>
+    <link rel="stylesheet" href="{% static 'css/payment_information.css' %}">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           const payRadioButtons = document.querySelectorAll('[name=payment_option]');
+           payRadioButtons.forEach(b => {
+              b.addEventListener('click', (e) => {
+                  const targetElement = e.target;
+                  const payLater = targetElement.id === "pay_later";
+                  const paymentInformation = document.getElementById('payment-information');
+                  payLater ? paymentInformation.classList.add('hidden') : paymentInformation.classList.remove('hidden');
+                  const inputs = paymentInformation.querySelectorAll('input');
+                  inputs.forEach(i => {
+                      i.required = !payLater;
+                  });
+              })
+           });
+        });
+    </script>
+{% endblock %}
+
