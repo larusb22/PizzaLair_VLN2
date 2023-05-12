@@ -1,9 +1,9 @@
 from django import forms
 from account.models import AccountInformation
+from django.forms import ModelForm, widgets
+from account.models import Profile
 
 from django.forms import ModelForm, widgets
-
-from account.models import Profile
 
 
 class ProfileForm(ModelForm):
@@ -15,6 +15,7 @@ class ProfileForm(ModelForm):
             'last_name': widgets.TextInput(attrs={'class': 'form-control'}),
             'profile_image': widgets.TextInput(attrs={'class': 'form-control'})
         }
+
 class UnregisteredUserForm(forms.ModelForm):
     class Meta:
         model = AccountInformation

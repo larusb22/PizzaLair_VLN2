@@ -7,3 +7,5 @@ urlpatterns = [
     path('<int:product_id>/', views.get_product_by_id, name='product-details'),
 ]
 
+
+
