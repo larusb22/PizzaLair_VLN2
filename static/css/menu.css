@@ -7,12 +7,15 @@
 input[type="search"] {
   font-size: 1rem;
   flex-grow: 1;
+  width: 100%; /* Adjust width as needed */
+  padding: 10px; /* Adjust padding as needed */
+  border-radius: 5px; /* Adjust border radius as needed */
 }
 
 input[type="submit"] {
   font-size: 1rem;
   padding: 10px 20px; /* Adjust padding as needed */
-  border-radius: 10px; /* Adjust border radius as needed */
+  border-radius: 20px; /* Adjust border radius as needed */
 }
 
 .search-container {
@@ -35,7 +38,7 @@ input[type="submit"] {
 }
 
 .filters .clear-filter:hover {
-  background-color: gray;
+  background-color: beige;
   color: white;
 }
 
@@ -75,7 +78,7 @@ input[type="submit"] {
 .well-product {
   display: flex;
   position: relative;
-  width: calc(25% - 20px);
+  width: calc(20% - 20px);
   margin-bottom: 20px;
   border-radius: 25px;
   border: 2px solid darkgreen;

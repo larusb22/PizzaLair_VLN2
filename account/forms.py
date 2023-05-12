@@ -3,6 +3,8 @@ from account.models import AccountInformation
 from django.forms import ModelForm, widgets
 from account.models import Profile
 
+from django.forms import ModelForm, widgets
+
 
 class ProfileForm(ModelForm):
     class Meta:
